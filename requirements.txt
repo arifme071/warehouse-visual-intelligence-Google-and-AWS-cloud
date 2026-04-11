@@ -11,6 +11,10 @@ langchain==0.1.20
 google-cloud-storage==2.16.0
 google-cloud-vision==3.7.2
 
+# AWS
+boto3==1.34.100
+botocore==1.34.100
+
 # API & Backend
 fastapi==0.111.0
 uvicorn==0.29.0
