@@ -1,11 +1,11 @@
 # 🏭 Warehouse Visual Intelligence System
 
 > A multi-agent AI system for real-time warehouse monitoring, safety detection,
-> layout optimisation, and operational cost reduction using computer vision and Google Cloud + AWS.
+> layout optimisation, and operational cost reduction using computer vision and Google Cloud.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![CI](https://github.com/arifme071/warehouse-visual-intelligence-Google-and-AWS-cloud/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/YOUR_USERNAME/warehouse-visual-intelligence/actions/workflows/ci.yml/badge.svg)
 
 ---
 
@@ -35,7 +35,7 @@ Upload a warehouse image (or connect a camera feed) and the system:
 
 | Agent | Responsibility |
 |---|---|
-| **Vision Agent** | Object detection (YOLOv8 / GCP Vision API / AWS Rekognition) |
+| **Vision Agent** | Object detection (YOLOv8 / GCP Vision API) |
 | **Layout Agent** | Spatial analysis, zone optimisation suggestions |
 | **Anomaly Agent** | Safety violations, misplaced items, PPE checks |
 | **Cost Agent** | $/day impact from inefficiencies and risks |
@@ -48,9 +48,8 @@ Upload a warehouse image (or connect a camera feed) and the system:
 | Layer | Technology |
 |---|---|
 | Object Detection | YOLOv8 (Ultralytics) |
-| Cloud Vision (GCP) | Google Cloud Vision API |
-| Cloud Vision (AWS) | AWS Rekognition |
-| Storage | Google Cloud Storage (GCS) / AWS S3 |
+| Cloud Vision | Google Cloud Vision API |
+| Storage | Google Cloud Storage (GCS) |
 | Agent Framework | CrewAI + LangChain |
 | LLM Backbone | Claude (Anthropic) |
 | Backend API | FastAPI |
@@ -64,8 +63,8 @@ Upload a warehouse image (or connect a camera feed) and the system:
 
 ### 1. Clone and set up environment
 ```bash
-git clone https://github.com/arifme071/warehouse-visual-intelligence-Google-and-AWS-cloud
-cd warehouse-visual-intelligence-Google-and-AWS-cloud
+git clone https://github.com/YOUR_USERNAME/warehouse-visual-intelligence
+cd warehouse-visual-intelligence
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -74,7 +73,7 @@ pip install -r requirements.txt
 ### 2. Configure environment
 ```bash
 cp .env.example .env
-# Edit .env and fill in your GCP / AWS / Anthropic API keys
+# Edit .env and fill in your GCP and API keys
 ```
 
 ### 3. Run on a local image
@@ -92,20 +91,15 @@ streamlit run dashboard/app.py
 python -m cloud_infra.setup_gcs
 ```
 
-### 6. (Optional) Set up AWS S3
-```bash
-python -m cloud_infra.setup_aws
-```
-
 ---
 
 ## 📁 Project Structure
 
 ```
-warehouse-visual-intelligence-Google-and-AWS-cloud/
+warehouse-visual-intelligence/
 ├── agents/               # AI agents (Vision, Layout, Anomaly, Cost, Orchestrator)
 ├── vision_pipeline/      # Image ingestion and preprocessing
-├── cloud_infra/          # GCS + AWS S3 setup and upload helpers
+├── cloud_infra/          # GCS setup and upload helpers
 ├── dashboard/            # Streamlit UI
 ├── data/sample_images/   # Test images
 ├── tests/                # pytest unit tests
@@ -151,10 +145,8 @@ pytest tests/ -v --cov=agents --cov=vision_pipeline
 
 - [x] YOLOv8 local inference
 - [x] Multi-agent pipeline
-- [x] Google Cloud Storage integration
+- [x] GCS integration
 - [x] Streamlit dashboard
-- [x] GitHub Actions CI/CD
-- [ ] AWS S3 + Rekognition integration
 - [ ] Real-time RTSP camera feed support
 - [ ] Fine-tuned PPE detection model
 - [ ] BigQuery analytics + trend dashboard
@@ -171,6 +163,5 @@ MIT — free to use, modify, and share.
 
 ## 🙋 Author
 
-Built by [Arifur Rahman](https://linkedin.com/in/arifme071) as a real-world AI + cloud engineering portfolio project.
-
-> Fields: Robotics · Manufacturing · Warehouse Operations · Process Optimisation · Computer Vision · Multi-Agent AI
+Built by [Your Name](https://linkedin.com/in/yourprofile) as a real-world AI + cloud engineering portfolio project.
+```
