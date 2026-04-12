@@ -62,7 +62,7 @@ with col1:
             file_bytes = np.asarray(bytearray(uploaded.read()), dtype=np.uint8)
             image_array = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
             st.image(cv2.cvtColor(image_array, cv2.COLOR_BGR2RGB),
-                     caption=uploaded.name, use_column_width=True)
+                     caption=uploaded.name, use_container_width=True)
 
     with tab_sample:
         sample_dir = Path("data/sample_images")
@@ -71,7 +71,7 @@ with col1:
             selected = st.selectbox("Select sample", [p.name for p in samples])
             image_array = cv2.imread(str(sample_dir / selected))
             st.image(cv2.cvtColor(image_array, cv2.COLOR_BGR2RGB),
-                     caption=selected, use_column_width=True)
+                     caption=selected, use_container_width=True)
         else:
             st.warning("No sample images found.")
             st.info("Run this first:")
@@ -121,7 +121,7 @@ with col2:
                                         cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1, cv2.LINE_AA)
 
                     st.image(cv2.cvtColor(annotated, cv2.COLOR_BGR2RGB),
-                             caption="Annotated Output", use_column_width=True)
+                             caption="Annotated Output", use_container_width=True)
                     _, buf = cv2.imencode(".jpg", annotated)
                     st.download_button("⬇ Download Annotated Image", data=buf.tobytes(),
                                        file_name="annotated_output.jpg", mime="image/jpeg")
